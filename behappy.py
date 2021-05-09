@@ -44,10 +44,3 @@ def get_merge_df(regi_data, tv_data):
     df = pd.merge(regi_data, tv_data).fillna(0)
 
     return(df)
-
-def get_month_data_i(data, series, year):
-    try:
-        for i in range(1,13):
-            return(globals()['data_' + str(i)] = get_tv_data(data[(data['Product'] == series)&(data['년'] == year)&(data['월'] == '{}월'.format(i))]))
-            print(i)
-    except: 1
